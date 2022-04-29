@@ -1,6 +1,6 @@
 export default {
   header: {
-    bgImageUrl: '/images/header/main.jpg',
+    bgImageUrl: require('@/assets/header/main.jpg'),
     title: 'Аренда катеров в Санкт-Петербурге',
     description: 'У нас вы можете заказать как эксклюзивные водные прогулки на катере без капитана для самостоятельного управления, так традиционные прогулки на индивидуальном катере с капитаном по рекам, каналам Петербурга и Финскому заливу!',
     links: [{
@@ -25,7 +25,7 @@ export default {
     videoUrl: 'https://www.youtube.com/embed/FrOiCr6KqOg'
   },
   filteredCards: {
-    bgImageUrl: '/images/filters-bg.jpg',
+    bgImageUrl: require('@/assets/filters-bg.jpg'),
     title: 'Выбери свою прогулку на катере',
     items: [
       {

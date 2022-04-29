@@ -1,7 +1,7 @@
 <template>
   <v-lazy>
     <div class="routes my-10">
-      <div class="routes__image" :style="{ backgroundImage: `url('/images/routes/${ activeRouteGroup }/${ activeRouteValue }.jpg')` }" />
+      <div class="routes__image" :style="{ backgroundImage: `url(${ require(`@/assets/routes/${ activeRouteGroup }/${ activeRouteValue }.jpg`) })` }" />
       <div class="routes__content container">
         <div class="routes__content-wrapper">
           <h3 class="text-h3 font-weight-bold mb-10">Рекомендуемые маршруты</h3>
