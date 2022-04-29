@@ -1,0 +1,48 @@
+@mixin layout($percent: 50, $bgurl, $position: left, $bgsize: cover) {
+  $offset: 0;
+  $align: start;
+  $bgposition: right;
+  $templateFirstColumn: auto;
+  $templateLastColumn: null;
+
+  @if $position == right {
+    $offset: 1;
+    $align: end;
+    $bgposition: left;
+    $templateFirstColumn: null;
+    $templateLastColumn: auto;
+
+  }
+
+  display: grid;
+  grid-template-columns: $templateFirstColumn min(#{ $percent }%, (100% - 1440px) / 2 + #{ 1440px * $percent / 100 } - 10px) $templateLastColumn;
+
+  &__image {
+    grid-column-start: 2 - $offset;
+    grid-column-end: 3 - $offset;
+    grid-row-start: 1;
+    background-size: $bgsize;
+    background-position: center $position;
+    background-image: url("#{ $bgurl }");
+  }
+
+  &__content {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-#{ $align };
+    min-height: 650px;
+
+    &-wrapper {
+      width: (100 - $percent) * 1%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-#{ $bgposition }: 20px;
+    }
+  }
+}
