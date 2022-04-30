@@ -60,6 +60,14 @@ export default {
     max-width: 1440px;
     margin: 0 auto;
     padding: 30px;
+    overflow: hidden;
+
+
+    @media screen and (max-width: 1264px) {
+      & {
+        padding: 15px;
+      }
+    }
   }
 
   .v-card {

@@ -7,7 +7,7 @@
                  v-bind="props"
                  color="transparent"
                  v-on="on">
-            <v-icon size="x-large">mdi-menu</v-icon>
+            <v-icon :size="$vuetify.display.lgAndUp ? 'x-large' : 'large'">mdi-menu</v-icon>
           </v-btn>
         </template>
 

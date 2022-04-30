@@ -1,8 +1,8 @@
 <template>  
-  <div class="gallery my-10">
-    <div class="gallery__title container d-flex justify-space-between align-center mb-10">
-      <h3 class="text-h3 text-left font-weight-bold">Фотогалерея</h3>
-      <div class="mt-5">
+  <div class="gallery my-5 my-lg-10">
+    <div class="gallery__title container d-flex justify-space-between align-center mb-5 mb-lg-10">
+      <h3 class="text-h4 text-lg-h3 text-left font-weight-bold">Фотогалерея</h3>
+      <div class="mt-lg-5">
         <v-btn size="x-small" icon @click="prev">
           <v-icon size="50">mdi-chevron-left</v-icon>
         </v-btn>

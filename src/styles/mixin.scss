@@ -17,6 +17,12 @@
   display: grid;
   grid-template-columns: $templateFirstColumn min(#{ $percent }%, (100% - 1440px) / 2 + #{ 1440px * $percent / 100 } - 10px) $templateLastColumn;
 
+  @media screen and (max-width: 1264px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__image {
     grid-column-start: 2 - $offset;
     grid-column-end: 3 - $offset;
@@ -24,6 +30,16 @@
     background-size: $bgsize;
     background-position: center $position;
     background-image: url("#{ $bgurl }");
+
+    @media screen and (max-width: 1264px) {
+      & {
+        margin-top: 10px;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        height: 200px;
+        background-position: center;
+      }
+    }
   }
 
   &__content {
@@ -35,7 +51,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-#{ $align };
-    min-height: 650px;
+    min-height: 500px;
+
+    @media screen and (max-width: 1264px) {
+      & {
+        min-height: 0;
+      }
+    }
 
     &-wrapper {
       width: (100 - $percent) * 1%;
@@ -43,6 +65,13 @@
       display: flex;
       flex-direction: column;
       padding-#{ $bgposition }: 20px;
+
+      @media screen and (max-width: 1264px) {
+        & {
+          width: 100%;
+          padding-#{ $bgposition }: 0;
+        }
+      }
     }
   }
 }
