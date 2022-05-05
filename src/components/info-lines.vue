@@ -14,7 +14,7 @@
     </div>
     <div class="info-lines__second mt-lg-15" v-if="!!itemsLeft?.length">
       <div class="info-lines__second__image" />
-      <div class="info-lines__second__content">
+      <div class="info-lines__second__content text-lg-right">
         <template v-for="({ title, description},  index) in itemsLeft" :key="title">
           <div class="mb-2 text-h6 mb-lg-5 text-lg-h5 font-weight-bold">{{ title }}</div>
           <div :class="`${ index === itemsLeft.length - 1 ? '' : $vuetify.display.lgAndUp ? 'mb-10' : 'mb-5' } text-body-2 text-lg-body-1`">{{ description }}</div>
