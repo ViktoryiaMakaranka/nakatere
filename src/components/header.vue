@@ -2,9 +2,9 @@
   <header class="header__wrapper text-center text-white">
     <div class="header__left" />
     <div class="header__right d-none d-lg-block" />
-    <div class="header__content d-flex flex-column flex-lg-row container">
-      <div class="header__content--left align-center pr-lg-8">
-        <div class="header__logo pb-lg-16">
+    <div class="header__content d-flex flex-column flex-lg-row">
+      <div class="header__content--left align-center">
+        <div class="header__logo container">
           <div class="d-flex justify-space-between">
             <a class="d-flex align-center text-decoration-none" href="https://nakatere.spb.ru/">
               <img alt="https://nakatere.spb.ru" :src="require('@/assets/logo.svg')">
@@ -16,22 +16,33 @@
             </div>            
           </div>          
         </div>
-        <div class="header__info mt-10 mt-lg-16">
-          <div class="header__info-icon mb-5">
-            <v-icon color="#f9a900" :size="$vuetify.display.lgAndUp ? '300px' : '100px'">mdi-anchor</v-icon>
-          </div>
-          <h1 class="text-capitalize text-center text-h4 text-lg-h3 pb-5">{{ title }}</h1>
-          <div class="header__info-wave" :style="{ backgroundSize: $vuetify.display.lgAndUp ? 'cover' : 'contain' }"/>
-          <p class="text-body-1 mr-3 mb-lg-10">{{ description }}</p>
+        <div class="header__info mt-lg-5">
+          <div class="header__info-wrapper d-flex d-lg-block">
+            <div class="header__info-content container pb-lg-0">
+              <div class="header__info-icon mb-lg-5">
+                <img alt="anchor" :src="require('@/assets/anchor.svg')">
+              </div>
+              <h1 class="text-capitalize text-center text-h5 text-lg-h3 pb-5">{{ title }}</h1>
+              <div class="header__info-wave" />
+              <img class="header__info-wave" alt="wave" :src="require('@/assets/wave.svg')">
+              <div class="header__bottom-actions mt-3 d-lg-none">
+                <v-btn class="mb-5" color="#fcb813" size="default" v-for="({ linkText, linkUrl }) in links" :key="linkText">
+                  <router-link :to="linkUrl">{{ linkText }}</router-link>
+                </v-btn>
+              </div>
+            </div>
+            <img class="d-lg-none header__info-image" alt="nakatere" :src="bgImageUrl">
+          </div>          
+          <p class="text-body-1 mr-3 mb-lg-10 text-justify pt-5 pt-lg-0 container">{{ description }}</p>
         </div>
       </div>
-      <div class="header__content--right mb-10 d-flex justify-space-between flex-column">
-        <div class="header__top-actions d-none d-lg-flex justify-end text-h3 align-center">
+      <div class="header__content--right mb-10 d-none d-lg-flex justify-space-between flex-column container">
+        <div class="header__top-actions d-none d-lg-flex justify-end text-h4 align-center">
           <a href=”tel:+78124674551”>+7 (812) 467-45-51</a>
           <HamburgerMenu />
         </div>
-        <div class="header__bottom-actions">
-          <v-btn class="mt-10 mx-3 font-weight-bold" color="#f9a900" :size="$vuetify.display.lgAndUp ? 'x-large' : 'large'" v-for="({ linkText, linkUrl }) in links" :key="linkText">
+        <div class="header__bottom-actions d-none d-lg-block">
+          <v-btn class="mt-10 mx-3" color="#fcb813" size="x-large" v-for="({ linkText, linkUrl }) in links" :key="linkText">
             <router-link :to="linkUrl">{{ linkText }}</router-link>
           </v-btn>
         </div>
@@ -66,7 +77,7 @@
   .header {
     &__wrapper {
       display: grid;
-      grid-template-columns: max(410px, 33.3%, calc((100% - 1440px) / 2 + 1440px / 3 + 30px)) auto;
+      grid-template-columns: max(410px, 35%, calc((100% - 1440px) / 2 + 1440px / 3 + 30px)) auto;
 
       @media screen and (max-width: 1264px) {
         & {
@@ -101,29 +112,69 @@
       grid-column-start: 1;
       grid-column-end: 3;
       z-index: 2;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
 
       &--left {
-        flex: 1;
+        width: 35%;
+
+        @media screen and (max-width: 1264px) {
+          & {
+            width: 100%;
+          }
+        }
       }
 
       &--right {
-        flex: 2;
+        width: 65%;
+
+        @media screen and (max-width: 1264px) {
+          & {
+            width: 100%;
+          }
+        }
       }
     }
 
     &__info {
       &-wave {
-        background-image: url('@/assets/wave.svg');
-        height: 150px;
-        background-position: center;
-        margin-top: -50px;
+        width: 100%;
+        transform: scaleY(75%);
+
+        @media screen and (max-width: 1264px) {
+          & {
+            transform: scaleY(100%);
+          }
+        }
       }
 
       &-icon {
-        svg {
-          height: 300px;
+        img {
+          width: 280px;
+
+          @media screen and (max-width: 1264px) {
+            & {
+              width: 100px;
+            }
+          }
         }
       }
+
+      &-content {
+        width: 100%;
+      }
+
+      &-image {
+        width: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &__bottom-actions .v-btn {
+      overflow-wrap: break-word;
+      white-space: normal;
+      padding: 5px;
     }
   }
 </style>

@@ -2,27 +2,25 @@
   <v-lazy>
     <div class="routes my-5 my-lg-10">
       <div class="routes__image" :style="{ backgroundImage: `url(${ require(`@/assets/routes/${ activeRouteGroup }/${ activeRouteValue }.jpg`) })` }" />
-      <div class="routes__content container">
-        <div class="routes__content-wrapper">
-          <h3 class="text-h4 text-lg-h3 text-center text-lg-left font-weight-bold mb-5 mb-lg-10">Рекомендуемые маршруты</h3>
-          <v-tabs class="routes__groups" v-model="activeRouteGroup" fixed-tabs>
-            <v-tab class="font-weight-bold"
-                   v-for="routeGroup in Object.keys(routes)"
-                   :key="routeGroup"
-                   :value="routeGroup">{{ routes[routeGroup]?.name }}</v-tab>
-          </v-tabs>
-          <v-tabs v-model="activeRouteValue" fixed-tabs color="#f9a900">
-            <v-tab class="font-weight-bold text-body-1"
-                   v-for="item in routes[activeRouteGroup].items"
-                   :key="item.value"
-                   :value="item.value">{{ item.title }}</v-tab>
-          </v-tabs>
-          <div class="text-left mb-2 mt-5 my-lg-5 pl-5">
-            <v-icon color="#288ed7">mdi-map-marker-distance</v-icon> <span class="text-body-1 text-lg-h5 ml-2 ml-lg-5">Протяженность маршрута ~ {{ activeRoute?.distance }} *</span>
-          </div>
-          <div class="text-body-2 text-lg-body-1 text-left mb-2 mb-lg-5 pl-lg-5 text-justify">{{ activeRoute?.description }}</div>
-          <div class="text-body-2 text-lg-body-1 text-left pl-5">* Зависит от скорости</div>
+      <div class="routes__content">
+        <h3 class="text-h4 text-lg-h3 text-center text-lg-left font-weight-bold mb-5 mb-lg-10">Рекомендуемые маршруты</h3>
+        <v-tabs class="routes__groups" v-model="activeRouteGroup" fixed-tabs>
+          <v-tab class="text-body-1"
+                 v-for="routeGroup in Object.keys(routes)"
+                 :key="routeGroup"
+                 :value="routeGroup">{{ routes[routeGroup]?.name }}</v-tab>
+        </v-tabs>
+        <v-tabs v-model="activeRouteValue" fixed-tabs color="#fcb813">
+          <v-tab class="text-body-1"
+                 v-for="item in routes[activeRouteGroup].items"
+                 :key="item.value"
+                 :value="item.value">{{ item.title }}</v-tab>
+        </v-tabs>
+        <div class="text-left d-flex align-center mb-2 mt-5 my-lg-5">
+          <v-icon color="#00abcc">mdi-map-marker-distance</v-icon> <span class="text-body-1 text-lg-h5 ml-2 ml-lg-5">Протяженность маршрута ~ {{ activeRoute?.distance }} *</span>
         </div>
+        <div class="text-body-2 text-lg-body-1 text-left mb-2 mb-lg-5 text-justify">{{ activeRoute?.description }}</div>
+        <div class="text-body-2 text-lg-body-1 text-left">* Зависит от скорости</div>
       </div>
     </div>
   </v-lazy>  
@@ -94,17 +92,17 @@ export default {
 
 
   .routes {
-    @include layout(60, '', right, contain);
+    @include layout(40%, '');
+
+    .v-tabs {
+      width: 100%;
+    }
 
     &__groups {
       .v-slide-group-item--active {
         color: #ffffff;
-        background: #f9a900;
+        background: #fcb813;
       }
-    }
-
-    .v-list-item--active {
-      background-color: rgba(249, 219, 57, .6);
     }
   }
 </style>

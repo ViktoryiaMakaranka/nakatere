@@ -31,7 +31,7 @@
               <v-icon size="30px" class="mr-3">mdi-clock-time-two-outline</v-icon> <span>от {{ mins }} минут</span>
             </v-card-subtitle>
             <v-card-subtitle class="text-h7 text-lg-h6 font-weight-bold">
-              <v-icon color="#288ed7" size="30px" class="mr-3">{{ `mdi-${ withCapitan ? 'account-tie-hat' : 'ship-wheel' }` }}</v-icon> <span>{{ withCapitan ? 'С капитаном' : 'Без капитана' }}</span>
+              <v-icon color="#00abcc" size="30px" class="mr-3">{{ `mdi-${ withCapitan ? 'account-tie-hat' : 'ship-wheel' }` }}</v-icon> <span>{{ withCapitan ? 'С капитаном' : 'Без капитана' }}</span>
             </v-card-subtitle>
             <v-card-text class="text-body-2 pb-0 pt-2 pt-lg-3">Расписание</v-card-text>
             <v-card-text class="text-body-2 pb-0 pt-2 pt-lg-3">ежедневно с {{ schedule.from }} по {{ schedule.to }}</v-card-text>
@@ -64,7 +64,7 @@
               <span class="mb-2"> {{ driverLicanse ? 'Необходимы права ГИМС' : 'Права ГИМС не нужны' }}</span>
             </v-card-subtitle>
             <v-card-text class="card__price align-self-center text-h5 text-lg-h4 font-weight-bold pb-0 pt-3">{{ price }}</v-card-text>
-            <v-card-text class="text-body-2 pb-0 pt-3"><v-btn class="font-weight-bold text-white" color="#f9a900" :size="$vuetify.display.lgAndUp ? 'x-large' : 'default'"><router-link :to="link">Подробнее</router-link></v-btn></v-card-text>
+            <v-card-text class="text-body-2 pb-0 pt-3"><v-btn class="text-white" color="#fcb813" :size="$vuetify.display.lgAndUp ? 'x-large' : 'default'"><router-link :to="link">Подробнее</router-link></v-btn></v-card-text>
           </div>
         </div>
       </v-card>
@@ -113,8 +113,9 @@ export default {
 <style lang="scss" scoped>
   .filtered-cards {
     &__filters {
-      background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3) ), v-bind(bgCssProperty);
-      background-position-y: center;
+      background-image: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5) ), v-bind(bgCssProperty);
+      background-position-y: bottom;
+      background-size: 100%;
       background-repeat-x: repeat;
     }
 
@@ -122,7 +123,7 @@ export default {
       background-color: rgba(255, 255, 255, .75);
 
       &[active="true"] {
-        background-color: rgba(249, 169, 0, .75);
+        background-color: rgba(252, 211, 19, .75);
       }
     }
 

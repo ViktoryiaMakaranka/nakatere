@@ -6,12 +6,18 @@
       <YoutubeVideo v-bind="config.youtubeVideo" />
     </div>
     <FilteredCards v-bind="config.filteredCards" />
-    <RoutesComponent />
-    <GiftCertificate />
+    <div class="container">
+      <RoutesComponent />
+    </div>
+    <div class="container">
+      <GiftCertificate />
+    </div>
     <v-lazy>
       <GalleryCarousel />
-    </v-lazy>    
-    <InfoLines v-bind="config.infoLines" />
+    </v-lazy>
+    <div class="container">
+      <InfoLines v-bind="config.infoLines" />
+    </div>
     <FooterComponent />
   </div>
 </template>

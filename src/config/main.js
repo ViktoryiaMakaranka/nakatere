@@ -1,7 +1,7 @@
 export default {
   header: {
     bgImageUrl: require('@/assets/header/main.jpg'),
-    title: 'Аренда катеров в Санкт-Петербурге',
+    title: 'Аренда Катеров в Санкт-Петербурге',
     description: 'У нас вы можете заказать как эксклюзивные водные прогулки на катере без капитана для самостоятельного управления, так традиционные прогулки на индивидуальном катере с капитаном по рекам, каналам Петербурга и Финскому заливу!',
     links: [{
       linkText: 'Прогулка с капитаном',
@@ -41,7 +41,7 @@ export default {
         driverLicanse: false,
         price: '8000 ₽',
         link: '/about',
-        imageLabel: { text: 'C капитаном', color: '#f9a900' }
+        imageLabel: { text: 'C капитаном', color: '#fcb813' }
       },
       {
         id: 2,

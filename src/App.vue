@@ -15,15 +15,15 @@ export default {
 
 <style lang="scss">
   @font-face {
-    font-family: 'Exo2';
+    font-family: 'ALS-SPb';
     font-weight: 400;
     font-style: normal;
     font-display: auto;
     unicode-range: U+000-5FF;
-    src: local('Exo2'), url('@/fonts/exo2/exo2.woff2') format('woff2'), url('@/fonts/exo2/exo2.woff') format('woff');
+    src: local('ALS-SPb'), url('@/fonts/ALS-SPb.ttf') format('truetype'), url('@/fonts/ALS-SPb.woff') format('woff'), url('@/fonts/ALS-SPb.woff2') format('woff2');
   }
 
-  $body-font-family: 'Exo2', sans-serif;
+  $body-font-family: 'ALS-SPb', sans-serif;
 
   .v-application {
     .text-h1,

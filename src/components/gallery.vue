@@ -53,7 +53,7 @@ export default {
 
     &__items {
       display: grid;
-      grid-template-rows: 200px 200px;
+      grid-template-rows: 300px 300px;
       grid-gap: 20px;
       grid-auto-flow: column;
       overflow-y: auto;
@@ -62,13 +62,26 @@ export default {
       &::-webkit-scrollbar {
         display: none;
       }
+
+      @media screen and (max-width: 1264px) {
+        & {
+          grid-template-rows: 200px 200px;
+        }
+      }
     }
 
     img {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
       object-fit: cover;
       transition: all ease-in-out .4s;
+
+      @media screen and (max-width: 1264px) {
+        & {
+          width: 200px;
+          height: 200px;
+        }
+      }
 
       &:hover {
         transform: scale(1.2);

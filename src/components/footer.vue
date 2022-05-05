@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer my-10 text-white">
+  <footer class="footer mt-10 text-white">
     <div class="footer__top-bg"></div>
     <div class="footer__content">
       <div class="footer__content-wrapper container">
@@ -8,7 +8,7 @@
             <img alt="https://nakatere.spb.ru" :src="require('@/assets/logo.svg')">
             <span class="pb-2 text-h5 text-lg-h4">nakatere.spb.ru</span>
           </div>          
-          <v-btn color="#f9a900" :size="$vuetify.display.lgAndUp ? 'x-large' : 'large'"><router-link to="/about">Забронировать онлайн</router-link></v-btn>
+          <v-btn color="#fcb813" :size="$vuetify.display.lgAndUp ? 'x-large' : 'large'"><router-link to="/about">Забронировать онлайн</router-link></v-btn>
         </div>
         <div class="footer__sections text-center text-lg-left text-body-2 text-lg-body-1 my-5 my-lg-10">
           <div class="footer__section">
