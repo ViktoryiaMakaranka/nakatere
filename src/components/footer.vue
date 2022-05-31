@@ -13,8 +13,8 @@
         <div class="footer__sections text-center text-lg-left text-body-2 text-lg-body-1 my-5 my-lg-10">
           <div class="footer__section">
             <div class="d-flex mb-5 mt-4 justify-center justify-lg-start align-center">
-              <v-icon class="mr-3" color="#ffffff">mdi-instagram</v-icon>
-              <v-icon color="#ffffff">mdi-facebook</v-icon>
+              <a href="https://vk.com/nakaterevspb" rel="nofollow" target="_blank"><v-icon class="mr-3" color="#ffffff">fab fa-vk</v-icon></a>
+              <a href="https://api.whatsapp.com/send/?phone=79062769090&text=C+сайта+nakatere.spb.ru" rel="nofollow" target="_blank"><v-icon class="mr-3" color="#ffffff">fab fa-whatsapp</v-icon></a>
             </div>
             <div>
               <a href=”tel:+78124674551”>+7 (812) 467-45-51</a>
@@ -27,10 +27,8 @@
           <div class="footer__section">
             <div class="text-h5 text-lg-h4 font-weight-bold mb-5">Адрес:</div>
             <div>Санкт-Петербург,</div>
-            <div>Петровская коса 9 лит Б,</div>
-            <div>Территория Речного</div>
-            <div>яхт-клуба Профсоюзов</div>
-            <div><v-icon color="#ffffff">mdi-subway</v-icon> Крестовский остров</div>
+            <div>ул. Академика Павлова 11 А,</div>
+            <div><v-icon color="#ffffff">mdi-subway</v-icon> Петроградская</div>
           </div>
           <div class="footer__section">
             <div class="text-h5 text-lg-h4 font-weight-bold mb-5">Услуги:</div>
@@ -38,25 +36,22 @@
             <div>Аренда катера без капитана</div>
             <div>Экскурсии</div>
             <div>Развод мостов</div>
+            <div>Туры</div>
           </div>
           <div class="footer__section">
             <div class="text-h5 text-lg-h4 font-weight-bold mb-5">Наш флот:</div>
             <div>Катер Шустрый</div>
             <div>Катер Толстый</div>
             <div>Катер Стремительный</div>
+            <div>Яхта Вольяжная</div>
           </div>
           <div class="footer__section">
             <div class="text-h5 text-lg-h4 font-weight-bold mb-5">Прочее:</div>
+            <div>Условия переноса и отмены заказа</div>
+            <div>Условия аренды</div>
+            <div>Как забронировать катание</div>
             <div>Подарочный сертификат</div>
-            <div>Условия бронирования и отмены</div>
             <div>Публичная оферта</div>
-            <div>Мы принимаем:</div>
-            <div class="d-flex justify-center justify-lg-start align-center">
-              <v-icon class="mr-3" color="#ffffff">mdi-credit-card-outline</v-icon>
-              <span class="mr-3">МИР</span>
-              <v-icon class="mr-3" color="#ffffff">mdi-cash-multiple</v-icon>
-              <v-icon class="mr-3" color="#ffffff">mdi-purse</v-icon>
-            </div>
           </div>
         </div>
       </div>
@@ -65,9 +60,13 @@
 </template>
 
 <script>
-export default {
+  import '@fortawesome/fontawesome-free/js/all.js'
+  import '@fortawesome/fontawesome-free/css/all.css'
+
+  export default {
     name: 'FooterComponent'
-}</script>
+  }
+</script>
 
 <style lang="scss" scoped>
   .footer {
