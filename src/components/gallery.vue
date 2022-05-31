@@ -5,7 +5,7 @@
       <div class="mt-lg-5">
         <v-btn class="gallery__prev" icon><v-icon size="50">mdi-chevron-left</v-icon></v-btn>
         <v-btn class="gallery__next" icon><v-icon size="50">mdi-chevron-right</v-icon></v-btn>
-</div>
+      </div>
     </div>
     <swiper :grid="{ rows: 2, fill: 'row' }"
             slidesPerView="auto"
@@ -16,15 +16,24 @@
               prevEl: '.gallery__prev',
             }"
             :modules="modules"
-            class="swiper">
+            class="swiper"
+            @click="openImage">
       <swiper-slide v-for="item in items"
                     :key="item">
-        <div class="swiper-zoom-container">
-          <img alt="photo"
-               :src="require(`@/assets/gallery/${ item }.jpg`)" />
-        </div>
-</swiper-slide>
+        <img alt="photo"
+             :src="require(`@/assets/gallery/${ item }.jpg`)" />
+      </swiper-slide>
     </swiper>
+    <v-dialog class="gallery__modal" v-model="opened">
+      <img alt="photo"
+           :src="openedImage" />
+    </v-dialog>
+    <v-btn v-show="opened"
+           icon
+           class="gallery__close-icon"
+           @click="opened = false">
+      <v-icon size="50">mdi-close</v-icon>
+    </v-btn>
   </div>  
 </template>
 
@@ -44,7 +53,9 @@
     },
     data() {
       return {
-        items: 38
+        items: 38,
+        opened: false,
+        openedImage: ''
       };
     },
     setup() {
@@ -53,11 +64,9 @@
       };
     },
     methods: {
-      next() {
-        document.querySelector('.gallery__items').scrollLeft += window.innerWidth;
-      },
-      prev() {
-        document.querySelector('.gallery__items').scrollLeft -= window.innerWidth;
+      openImage({ clickedSlide }) {
+        this.openedImage = clickedSlide.children[0].src;
+        this.opened = true;
       }
     }
   }
@@ -67,6 +76,13 @@
   .gallery {
     .v-btn {
       box-shadow: none;
+    }
+
+    &__close-icon {
+      position: fixed;
+      right: 30px;
+      top: 30px;
+      z-index: 3000;
     }
 
     .swiper-slide {
